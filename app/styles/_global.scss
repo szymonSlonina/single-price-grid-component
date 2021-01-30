@@ -1,0 +1,147 @@
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #e6eff6;
+
+    section {
+        height: calc(100% - 50px);
+        padding: 70px 20px 70px 20px;
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "join"
+            "subscription"
+            "why-us";
+        justify-items: center;
+
+        div {
+            padding: 20px;
+            width: 320px;
+        }
+
+        @media screen and (min-width: $desktopWidth) {
+            grid-template-rows: 220px 260px;
+            grid-template-columns: 320px 320px;
+            grid-template-areas:
+                "join join"
+                "subscription why-us";
+            align-content: center;
+        }
+    }
+}
+
+#join {
+    grid-area: join;
+
+    background-color: white;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    @media screen and(min-width: $desktopWidth) {
+        width: 100%;
+    }
+}
+
+#subscription {
+    grid-area: subscription;
+
+    background-color: #2bb3b1;
+    @media screen and(min-width: $desktopWidth) {
+        justify-self: right;
+    }
+}
+
+#why-us {
+    grid-area: why-us;
+
+    background-color: #4abebd;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    @media screen and(min-width: $desktopWidth) {
+        justify-self: left;
+    }
+}
+
+footer {
+    grid-area: footer;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.blue-font {
+    color: $fontBlue;
+}
+
+.green-font {
+    color: $fontGreen;
+}
+
+.light-blue-font {
+    color: $fontLightBlue;
+}
+
+.grayish-font {
+    color: $fontGrayish;
+}
+
+.white-font {
+    color: white;
+}
+
+.font-heading {
+    font-size: 1.2rem;
+}
+
+.font-med-heading {
+    font-size: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    float: left;
+}
+
+.price-centered {
+    line-height: 2rem;
+    margin-left: 10px;
+}
+
+button {
+    width: 100%;
+    height: 30%;
+    background-color: $fontGreen;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #26a2a0, -10px 10px 5px #26a2a0;
+}
